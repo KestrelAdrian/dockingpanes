@@ -5,25 +5,25 @@ script:
   - bash scripts/ci/$TRAVIS_OS_NAME/build.sh
 matrix:
   include:
-  - os: linux
-    compiler: gcc
-    dist: bionic
-    before_install:
-      - sudo apt-get update -qq
-      - sudo apt-get install devscripts build-essential
-      - sudo apt-get install qtdeclarative5-dev qt5-default
-  - os: osx
-    compiler: clang
-    before_install:
-        - brew install qt5
-        - brew link qt5 --force
+#  - os: linux
+#    compiler: gcc
+#    dist: bionic
+#    before_install:
+#      - sudo apt-get update -qq
+#      - sudo apt-get install devscripts build-essential
+#      - sudo apt-get install qtdeclarative5-dev qt5-default
+#  - os: osx
+#    compiler: clang
+#    before_install:
+#        - brew install qt5
+#        - brew link qt5 --force
   - os: windows
     before_install:
         - dir C:/Program\ Files\ \(x86\)/Windows\ Kits/10/bin/10.0.17134.0/x64
-        - cmd.exe /C 'cd && "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" x86 && cd && cd "C:/Users/travis/build/KestrelRadarSensors/DockingPanes" && dir'
+        - cmd.exe /C 'cd && "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" x86 && cd && cd "C:/Users/travis/build/KestrelAdrian/DockingPanes" && dir'
         - curl -vLO http://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe
         - "./qt-unified-windows-x86-online.exe --verbose --script qt-installer-windows.qs"
         - ls -la C:/Qt/5.12.3/msvc2017/bin/qtenv2.bat
     script:
-        - cmd.exe /C 'cd && "C:\Qt\5.12.3\msvc2017\bin\qtenv2.bat" && cd && "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" x86 && cd "C:\Users\travis\build\KestrelRadarSensors\DockingPanes" && cd && qmake DockingPanes.pro && nmake'
+        - cmd.exe /C 'cd && "C:\Qt\5.12.3\msvc2017\bin\qtenv2.bat" && cd && "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\VC\Auxiliary\Build\vcvarsall.bat" x86 && cd "C:\Users\travis\build\KestrelAdrian\DockingPanes" && cd && qmake DockingPanes.pro && nmake'
       
