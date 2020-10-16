@@ -88,5 +88,3 @@ Controller.prototype.FinishedPageCallback = function() {
     }
     gui.clickButton(buttons.FinishButton);
 };
-
-// vim: set ft=javascript:
