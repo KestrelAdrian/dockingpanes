@@ -2,7 +2,7 @@ language: cpp
 git:
   depth: 3
 script:
-  - bash scripts/$TRAVIS_OS_NAME/build.sh
+  - bash scripts/ci/$TRAVIS_OS_NAME/build.sh
 matrix:
   include:
   - os: linux
