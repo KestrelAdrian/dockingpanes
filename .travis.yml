@@ -1,6 +1,6 @@
 language: cpp
 git:
-  depth: 1
+  depth: 3
 script:
   - bash scripts/$TRAVIS_OS_NAME/build.sh
 matrix:
