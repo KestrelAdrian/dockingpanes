@@ -19,7 +19,7 @@ matrix:
 #        - brew link qt5 --force
 #    script:
 #        - bash scripts/ci/$TRAVIS_OS_NAME/build.sh
-  - os: windows
+      - os: windows
         before_install:
            - cmd.exe /C 'cd && "C:/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/VC/Auxiliary/Build/vcvars32.bat"'
            - curl -vLO http://download.qt.io/official_releases/online_installers/qt-unified-windows-x86-online.exe
@@ -27,4 +27,5 @@ matrix:
         script:
            - cmd.exe /C 'cd && "C:/Program Files (x86)/Microsoft Visual Studio/2017/BuildTools/VC/Auxiliary/Build/vcvars32.bat" && cd && "C:/Qt/5.12.3/msvc2017/bin/qmake" DockingPanes.pro && cd && nmake'
            - ls
+
            
